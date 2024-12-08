@@ -1,2 +1,2 @@
 # MEDIART213_MuxiChen_FinalProject
-分局收到覅反馈表
+The Muxi Chen's Web Portfolio is a personal website designed to reflect my portfolio, creativity, and interests. This website was created with the intention of providing an interactive, user-friendly, and visually engaging experience. It features two main sections: the Portfolio Module, where I showcase my projects, and the Self Module, which highlights personal aspects of my life. 
