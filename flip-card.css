@@ -1,0 +1,207 @@
+.flip-container {
+    perspective: 1000px;
+    /* Creates the 3D perspective */
+    flex: 1 1 auto;
+    /* Let the cards equally share the row space */
+    max-width: 100%;
+    /* Ensure no card exceeds the row width */
+    margin: 10px;
+    /* Optional spacing between cards */
+}
+
+/* Flip card */
+.flip-card {
+    width: 100%;
+    /* Full width of the container */
+    height: 300px;
+    /* Default height */
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+    /* Smooth flipping */
+}
+
+/* Flip on hover */
+.flip-container:hover .flip-card {
+    transform: rotateY(180deg);
+    /* Flip card on hover */
+}
+
+/* Card faces */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    /* Hides the side not facing the screen */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* Ensure vertical stacking of content */
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    /* Center-align text */
+}
+
+.flip-card-front {
+    background-color: #4caf50;
+    /* Green */
+    color: white;
+    padding: 20px;
+}
+
+.flip-card-back {
+    background-color: #2196f3;
+    /* Blue */
+    color: white;
+    padding: 20px;
+    transform: rotateY(180deg);
+    /* Start back side flipped */
+}
+
+/* Links and text styling */
+.card-content p {
+    margin: 10px 0;
+    /* Spacing between lines */
+    padding-left: 15%;
+    padding-right: 15%;
+    font-size: 1.5rem;
+}
+
+.card-content a {
+    color: #2196f3;
+    text-decoration: underline;
+    margin: 5px 0;
+    /* Spacing between links */
+}
+
+/* Row layout */
+.card-row {
+    display: flex;
+    justify-content: space-between;
+    /* Distribute cards equally */
+    gap: 10px;
+    /* No extra gap between cards */
+
+}
+
+.card-title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-white {
+    background-color: #f8f9fa;
+    color: #1B1B1B;
+}
+
+.card-black {
+    border: 1px solid #ddd;
+    background-color: #1B1B1B;
+    color: #f8f9fa;
+}
+
+.card-purple {
+    background: linear-gradient(to right, #BFABFF, #F4B3FF);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-row {
+        flex-direction: column;
+        /* Stack cards vertically on small screens */
+    }
+
+    .flip-container {
+        margin: 0 0 40px 0;
+        /* Add spacing between stacked cards */
+    }
+
+    .card-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .card-content p {
+        font-size: 1rem;
+        /* Spacing between lines */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* Stagger effect */
+    .card-row .flip-container:nth-child(1) {
+        align-self: flex-start;
+        /* Move the first card up */
+        margin-bottom: 200px;
+        /* Optional for better spacing */
+    }
+
+    .card-row .flip-container:nth-child(2) {
+        align-self: flex-end;
+        /* Move the second card down */
+        margin-top: 200px;
+        /* Optional for better spacing */
+    }
+
+    .card-title {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .card-content p {
+        margin: 10px 0;
+        font-size: 1rem;
+        /* Spacing between lines */
+    }
+
+    .card-row {
+        gap: 15px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    /* Stagger effect */
+    .card-row .flip-container:nth-child(1) {
+        align-self: flex-start;
+        /* Move the first card up */
+        margin-bottom: 200px;
+        /* Optional for better spacing */
+    }
+
+    .card-row .flip-container:nth-child(2) {
+        align-self: flex-end;
+        /* Move the second card down */
+        margin-top: 200px;
+        /* Optional for better spacing */
+    }
+
+    .flip-card {
+        height: 500px;
+    }
+
+    .card-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* Add spacing between cards */
+        flex-wrap: wrap;
+        /* Allow wrapping for smaller screen widths */
+        width: 100%;
+        /* Ensure the row spans full width of the container */
+        max-width: 1780px;
+        /* Restrict row width for centering */
+        margin: 0 auto;
+        /* Center the row in the parent container */
+        gap: 30px;
+    }
+}

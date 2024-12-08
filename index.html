@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muxi Chen's Web</title>
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="flip-card.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main container -->
+    <div class="container w3-display-container">
+        <img src="img/broad1.png" alt="Image Description" class="image-overlay">
+        <!-- Video Container -->
+        <div class="video-container">
+            <video autoplay loop muted>
+                <source src="video/practice_1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+    
+            <!-- color block -->
+            <div class="color-block text1" style="top: 8%; left: 5%; z-index: 4;">
+                Home Service
+            </div>
+            <button class="color-block text1 top-button" style="top: 8%; right: 5%; z-index: 4;" onclick="scrollToContent('footer-contact')">
+                Contact
+            </button>
+        </div>
+    </div>
+
+    <br><br>
+
+
+    <!-- Switch Button -->
+    <div class="switch">
+        <input type="checkbox" id="toggle" />
+        <label class="slider" for="toggle">
+            <span class="circle-text self">Self</span>
+            <span class="circle-text portfolio">Portfolio</span>
+        </label>
+    </div>
+
+    <!-- Portfolio Module Section -->
+    <section id="portfolio-module" class="module w3-container">
+        <h2 class="card-title">Portfolio Module</h2>
+        <h3 class="card-content">Explore my featured projects:</h3>
+        <!-- Card Row 1 -->
+        <div class="card-row">
+            <div class="flip-container">
+                <div class="flip-card">
+                    <div class="flip-card-front card-white ">
+                        <div class="card-content">
+                            <h3 class="card-title">Eco Sync</h3>
+                            <img src="img/portfolio/背包灰.png" class="card2-image">
+                        </div>
+                    </div>
+                    <div class="flip-card-back card-white">
+                        <div class="card-content">
+                            <p>This project aims to explore the interrelationship between humans and nature,
+                                emphasizing the impact of human activities on the environment and ecosystems.
+                                We hope to design a wearable device that helps users realize how their behaviors
+                                directly or indirectly affect nature.</p>
+                            <a href="eco-sync.html" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="flip-container">
+                <div class="flip-card">
+                    <div class="flip-card-front card-black">
+                        <div class="card-content">
+                            <h3 class="card-title">Hidden Horizons</h3>
+                            <img src="img/portfolio/笔记本白.png" class="card2-image">
+                        </div>
+                    </div>
+                    <div class="flip-card-back card-black">
+                        <div class="card-content">
+                            <p>In our daily lives, many subtle moments and details are often overlooked, 
+                                yet these details contain rich beauty and stories. My project amplifies 
+                                and displays these forgotten details through an interactive game, 
+                                exploring the fun and meaning behind them. The game is designed to guide users to re-examine 
+                                the small things in life and discover the extraordinary hidden behind the ordinary.</p>
+                            <a>Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Card Row 2 -->
+        <div class="card-row">
+            <div class="flip-container">
+                <div class="flip-card">
+                    <div class="flip-card-front card-white ">
+                        <div class="card-content">
+                            <h3 class="card-title">Smart Greenery Machine</h3>
+                            <img src="img/portfolio/摄像头灰.png" class="card2-image">
+                        </div>
+                    </div>
+                    <div class="flip-card-back card-white">
+                        <div class="card-content">
+                            <p>This project aims to explore the interrelationship between humans and nature,
+                                emphasizing the impact of human activities on the environment and ecosystems.
+                                We hope to design a wearable device that helps users realize how their behaviors
+                                directly or indirectly affect nature.</p>
+                            <a>Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="flip-container">
+                <div class="flip-card">
+                    <div class="flip-card-front card-black">
+                        <div class="card-content">
+                            <h3 class="card-title">Metallifolia Verde</h3>
+                            <img src="img/portfolio/博物馆白.png" class="card2-image">
+                        </div>
+                    </div>
+                    <div class="flip-card-back card-black">
+                        <div class="card-content">
+                            <p>This work is inspired by real-life events and observed phenomena：
+                                In art galleries and museums, it happens all the time that young children inadvertently or intentionally 
+                                damage artwork. These incidents have sparked widespread discussion and attention, inspiring concerns 
+                                about art preservation and children's behavior</p>
+                            <a>Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- Self Module Section -->
+    <section id="self-module" class="module active w3-container">
+        <h2 class="card-title">Self Module</h2>
+        <h3 class="card-content">Explore my interests:</h3>
+        <!-- Card Row 1 -->
+        <div class="card-row">
+            <div class="flip-container">
+                <div class="flip-card">
+                    <div class="flip-card-front card-purple ">
+                        <div class="card-content">
+                            <h3 class="card-title">Cultural Exploration:Travel</h3>
+                            <img src="img/self/travel 灰色.png" class="card2-image">
+                        </div>
+                    </div>
+                    <div class="flip-card-back card-white">
+                        <div class="card-content">
+                            <p>Through visiting 13 places, I had deeply explored a diverse range of cultures,
+                                from Western modern civilization to Eastern traditional cultures.</p>
+                            <a href="travel.html" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="flip-container">
+                <div class="flip-card">
+                    <div class="flip-card-front card-purple">
+                        <div class="card-content">
+                            <h3 class="card-title">Budgeting Tips:Money Management</h3>
+                            <img src="img/self/money 灰色.png" class="card2-image">
+                        </div>
+                    </div>
+                    <div class="flip-card-back card-white">
+                        <div class="card-content">
+                            <p>Since April 2022, I've gained better control over your spending by
+                                tracking expenses and gaining a clearer understanding of your financial
+                                habits.</p>
+                            <a href="money-management.html" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Card Row 2 -->
+        <div class="card-row">
+            <div class="flip-container">
+                <div class="flip-card w3-half">
+                    <div class="flip-card-front card-purple">
+                        <div class="card-content">
+                            <h3 class="card-title">Gaming Insights:Genshin Impact</h3>
+                            <img src="img/self/原神 灰色.png" class="card2-image">
+                        </div>
+                    </div>
+                    <div class="flip-card-back card-white">
+                        <div class="card-content">
+                            <p>I've played several games, but I only mention Genshin
+                                Impact because it's the one I've stuck with the longest and never grown tired of.
+                                It's become a part of who I am.
+                                (By the way, I've been playing it for 1260 days!)</p>
+                            <a href="genshin-impact.html" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-container">
+    
+            </div>
+        </div>
+    </section>
+
+
+        <footer class="footer" id="footer-contact">
+            <div class="footer-content">
+              <!-- Contact -->
+              <div class="contact card-content">
+                <h3>Contact Me</h3>
+                <p>If you have any questions, feel free to reach out to me via email.</p>
+                
+                <form action="mailto:174934qq@gmail.com" method="POST" enctype="text/plain">
+                  <label for="email">Your Email Address:</label>
+                  <input type="email" id="email" name="email" required placeholder="Enter your email">
+                  
+                  <label for="message">Your Message:</label>
+                  <textarea id="message" name="message" rows="4" placeholder="Enter your message"></textarea>
+                  
+                  <button type="submit">Send Message</button>
+                </form>
+              </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="footer-bottom">
+              <p>© 2024 Muxi Chen. All Rights Reserved.</p>
+            </div>
+          </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
