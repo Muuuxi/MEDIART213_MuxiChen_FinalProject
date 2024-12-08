@@ -198,8 +198,8 @@ img:hover {
 }
 
 .caption {
-  position: absolute;
-  bottom: 10%;
+  position: relative;
+  bottom: 70%;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(227, 149, 227, 0.7);
