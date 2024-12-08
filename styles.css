@@ -1,0 +1,467 @@
+/* Full screen black background */
+body {
+  margin: 0;
+  background-color: #1B1B1B;
+  font-family: Arial, sans-serif;
+  color: white;
+  line-height: 1.5;
+}
+
+/* Main Container */
+.container {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Picture style */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2; /* on the top */
+}
+
+/* Video Container */
+.video-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto; 
+  aspect-ratio: 16 / 9; /* Fixed aspect ratio */
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Make sure the video content fills the container */
+}
+
+/* Color Block */
+.color-block {
+  position: absolute;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  font-size: 1rem;
+  color: rgb(255, 254, 254);
+  font-family: Arial, sans-serif;
+  z-index: 1;  
+}
+
+.top-button {
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.top-button:hover {
+  background: #BFABFF;
+}
+
+.text1{
+  background: linear-gradient(to right, #BFABFF, #F4B3FF)
+}
+
+
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 120px;
+  height: 60px;
+  background-color: #ccc;
+  border-radius: 30px;
+  right: 6%;
+}
+
+/* Hide the check box */
+.switch input {
+  opacity: 0; /* Transparency is set to 0 to hide it visually */
+  width: 0;
+  height: 0;
+}
+
+
+.slider {
+  position: absolute;
+  cursor: pointer; /*When the mouse hovers over the element, the cursor changes to a hand pointer.*/
+  top: 0;
+  left: 0;
+  width: 128%;
+  height: 100%;
+  background: linear-gradient(to right, #BFABFF, #F4B3FF); /*The gradient extends from left to right*/
+  border-radius: 30px;
+  transition: background-color 0.4s ease; /*Animate changes to the background-color property*/
+}
+
+/* Round button */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  border-radius: 50%;
+  top: 5px;
+  left: calc(100% - 55px); /* The left value of the element is positioned at the end of the width 
+  of the parent element (100%), but is slightly shifted to the left by 55 pixels. */
+  transition: transform 0.4s ease;
+}
+
+/* Style when selected */
+.switch input:checked + .slider {
+  background: #ccc; 
+}
+
+/* Round button moves when selected */
+.switch input:checked + .slider:before {
+  transform: translateX(-93px); /* Move the X-axis 93 pixels to the left */
+}
+
+
+.circle-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  pointer-events: none;
+  user-select: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: -1; /* All text is placed below the round button by default */
+}
+
+/* Displays the 'Portfolio' text in the initial state */
+.circle-text.portfolio {
+  left: 35%;  /* Make sure it is located to the left inside the button */
+  font-size: 20px;
+  z-index: 1;  
+  opacity: 1;  
+  transform: translate(-50%, -50%); /* Center elements horizontally and vertically */
+}
+
+/* Hides the 'Self' text in the initial state */
+.circle-text.self {
+  left: 75%;  
+  font-size: 20px;
+  opacity: 0;   
+  transform: translate(-50%, -50%); /* Center elements horizontally and vertically */
+  z-index: -1;
+}
+
+/* After toggle, the 'Portfolio' text hides */
+.switch input:checked + .slider .circle-text.portfolio {
+  opacity: 0;  
+  transform: translate(-50%, -50%) scale(0); 
+  z-index: -1; 
+}
+
+/* After switching, the 'Self' text appears */
+.switch input:checked + .slider .circle-text.self {
+  opacity: 1; 
+  transform: translate(-50%, -50%) scale(1); 
+  z-index: 1; 
+}
+
+
+
+
+
+.module {
+  display: none;
+  padding: 20px;
+}
+
+.module.active {
+  display: block;
+}
+
+.card1-container, .card2-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card1, .card2 {
+  perspective: 1000px;
+  width: 250px;
+  height: 200px;
+}
+
+.card1-inner, .card2-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card1:hover .card1-inner, .card2:hover .card2-inner {
+  transform: rotateY(180deg);
+}
+
+.card1-front, 
+.card1-back, 
+.card2-front-1, .card2-front-2, 
+.card2-front-1-2, .card2-front-2-2, 
+.card2-back-1, .card2-back-2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card2-back-2 {
+transform: rotateY(180deg);
+background-color: #1B1B1B;
+}
+
+.card1-back {
+  transform: rotateY(180deg);
+  background-color: #ffffff;
+  }
+
+.card2-back-1 {
+  transform: rotateY(180deg);
+  background-color: #ffffff;
+  }
+
+/*detailed*/
+.card2-front-1, .card2-front-1-2 {
+  background-color: #f8f9fa;
+  perspective: 1000px;
+  width: 250px;
+  height: 200px;
+  display: flex; 
+  flex-direction: column; /* Vertically arrange content */
+  justify-content: space-between; /* It distributes space 
+  evenly among the child elements and makes sure 
+  that the first and last elements fit snugly around the edges of the container. */
+  height: 100%; 
+  padding: 10px; 
+  box-sizing: border-box; /* By default, width and height include only the content area, 
+  not the margins and borders. 
+  For box-sizing: border-box; When the width and height include the inside margin and border */
+}
+
+.card1-front {
+  background: linear-gradient(to right, #BFABFF, #F4B3FF);
+  perspective: 1000px;
+  width: 250px;
+  height: 200px;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  height: 100%; 
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+
+
+.card2-front-1 h3 {
+  font-size: 2.5rem; 
+  font-weight: bold; 
+  color: #1B1B1B; 
+  margin: 0; 
+  text-align: center; 
+  padding-left: 10px; 
+  flex: 1; /* Shorthand for the flex-grow, flex-shrink, and flex-basis properties */
+  display: flex; 
+  align-items: center;
+}
+
+.card2-front-1-2 h3 {
+  font-size: 1.7rem; 
+  font-weight: bold; 
+  color:#1B1B1B; 
+  margin: 0; 
+  text-align: center; 
+  padding-left: 10px; 
+  flex: 1; 
+  display: flex; 
+  align-items: center; 
+}
+
+.card1-back p{
+  color: #1B1B1B;
+
+}
+.card2-front-2, .card2-front-2-2 {
+  background-color: #1B1B1B;
+  perspective: 1000px;
+  width: 250px;
+  height: 200px;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  height: 100%; 
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+
+
+.card2-front-2 h3 {
+  font-size: 1.8rem; 
+  font-weight: bold; 
+  color: #ffffff; 
+  margin: 0; 
+  text-align: center; 
+  padding-left: 10px; 
+  flex: 1; 
+  display: flex; 
+  align-items: center; 
+}
+
+.card2-front-2-2 h3 {
+  font-size: 1.9rem; 
+  font-weight: bold; 
+  color: #ffffff; 
+  margin: 0; 
+  text-align: center; 
+  padding-left: 10px; 
+  flex: 1; 
+  display: flex; 
+  align-items: center; 
+}
+
+.card2-image {
+  width: 30%;
+  height: auto;
+  display: block; 
+  margin: 0 auto; 
+}
+
+.card2-back-2 p{
+  font-size: 16px;
+  margin-bottom: 10px; 
+  text-align: center; 
+  color: #ffffff;
+  }
+
+  .card2-back-2 a {
+    text-align: center; 
+    display: block; 
+    margin-top: 10px; 
+    text-decoration: none; 
+    color: #007BFF; 
+  }
+  
+.card2-back-1 p{
+    
+    color: #1B1B1B;
+    }
+
+
+/* Footer All */
+.footer {
+  background-color: #1B1B1B;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Footer Content */
+.footer-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Contact */
+.contact h3 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.contact p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.contact label {
+  font-size: 16px;
+}
+
+.contact input[type="email"], .contact textarea {
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  font-size: 16px;
+  border: 1px solid #1B1B1B;
+  border-radius: 5px;
+}
+
+.contact textarea {
+  resize: vertical;
+}
+
+.contact button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: linear-gradient(to right, #BFABFF, #F4B3FF);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.contact button:hover {
+  background: #BFABFF;
+}
+
+/* Footer */
+.footer-bottom {
+  margin-top: 40px;
+  border-top: 1px solid #1B1B1B;
+  padding-top: 10px;
+}
+
+.footer-bottom p {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.footer h3 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.footer p, .footer label{
+  font-size: 24px;
+}
+
+.footer-bottom p {
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .card2-image {
+    width: 20%;
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Management</title>
+    <link rel="stylesheet" href="money-management-styles.css">
+    <link rel="stylesheet" href="w3.css">
+</head>
+
+<body>
+    <div class="header">
+      <div class="gradient-text">
+        <h1>Money Management </h1>
+      </div>
+      <div class="buttons">
+        <a href="index.html"><button>Home</button></a>
+      </div>
+    </div>
+
+    <div class="w3-container">
+      <div class="flip-container" id="flip-container">
+          <div class="flipper">
+              <div class="front w3-row-padding">
+                <div class="w3-col w3-twothird">
+                  <img id="front-image" src="" alt="Image">
+                </div>
+                <div class="w3-col w3-rest">
+                  <div class="title" id="front-title"></div>
+                  <div class="description" id="front-description"></div>
+                </div> 
+              </div>
+              <div class="back w3-row-padding">
+                <div class="w3-col w3-twothird">
+                  <img id="back-image" src="" alt="Image">
+                </div>
+                <div class="w3-col w3-rest">
+                  <div class="title" id="back-title"></div>
+                  <div class="description" id="back-description"></div>
+                </div> 
+              </div>
+          </div>
+      </div>
+      <div class="nav-buttons">
+          <button class="prev-btn" onclick="previousPage()">Previous</button>
+          <button class="next-btn" onclick="nextPage()">Next</button>
+      </div>
+  </div>
+
+    <script src="money-management-script.js"></script>
+</body>
+</html>
+
