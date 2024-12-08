@@ -24,7 +24,11 @@
 /* Flip on hover */
 .flip-container:hover .flip-card {
     transform: rotateY(180deg);
-    /* Flip card on hover */
+}
+
+/* Flip active */
+.flip-container:active .flip-card {
+    transform: rotateY(180deg);
 }
 
 /* Card faces */

@@ -97,6 +97,10 @@ button:hover {
   transform: rotate(45deg) rotateY(180deg); 
 }
 
+.card:active .card-inner {
+  transform: rotate(45deg) rotateY(180deg); 
+}
+
 .card-front, .card-back {
   position: absolute;
   width: 100%;
