@@ -1,3 +1,4 @@
+//Thank you ChatGPT
 // When clicking on the image, show it in the middle of the screen
 const images = document.querySelectorAll('.photo img');
 

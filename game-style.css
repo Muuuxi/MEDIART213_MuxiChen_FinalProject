@@ -19,7 +19,7 @@ body {
   font-weight: bold;
   background: linear-gradient(to right, #BFABFF, #F4B3FF);
   -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
+  -webkit-background-clip: text; /*CSS Gradient Text Tutorial: https://cssgradient.io/blog/css-gradient-text/*/
 }
 
 .row {
